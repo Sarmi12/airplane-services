@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var ctrlTables = require('../controllers/tables')
+var ctrlMain = require('../controllers/main');
 
-router.get('/tables/:climbid', ctrlTables.ClimbReadOne);
-router.get('/tables/:flapsid', ctrlTables.FlapsReadOne);
-router.get('/tables/:landingid', ctrlTables.LandingReadOne);
+/* GET home page. */
+router.get('/', ctrlMain.index);
 
 module.exports = router;

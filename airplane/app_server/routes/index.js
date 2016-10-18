@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var ctrlMain = require('../controllers/main');
+var ctrlClimbTables = require('../controllers/climbtables');
+var ctrlLandTables = require('../controllers/landtables');
+var ctrlFlapsTables = require('../controllers/flapstables');
 
-/* GET home page. */
-router.get('/', ctrlMain.index);
+
+router.get('/climbtables/:climbid', ctrlClimbTables.ClimbReadOne);
+router.get('/tables/:flapsid', ctrlFlapsTables.FlapsReadOne);
+router.get('/landtables/:landingid', ctrlLandTables.LandingReadOne);
 
 module.exports = router;
